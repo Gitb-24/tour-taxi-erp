@@ -18,3 +18,9 @@ def get_bookings():
     bookings = conn.execute('SELECT * FROM Bookings').fetchall()
     conn.close()
     return bookings
+
+def get_booking(booking_id):
+    conn = get_db_connection()
+    booking = conn.execute('SELECT * FROM Bookings WHERE BookingID = ?', (booking_id,)).fetchone()
+    conn.close()
+    return booking

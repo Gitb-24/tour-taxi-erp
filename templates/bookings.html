@@ -30,6 +30,7 @@
                 <td>{{ booking['CustomerName'] }}</td>
                 <td>{{ booking['ContactInfo'] }}</td>
                 <td>
+                    <a href="{{ url_for('edit', id=booking['BookingID']) }}" class="btn btn-primary btn-sm">Edit</a>
                     <a href="{{ url_for('delete', id=booking['BookingID']) }}" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Booking{% endblock %}
+
+{% block content %}
+    <h1>Edit Booking</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">{{ message }}</div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="vehicle_id" class="form-label">Vehicle ID:</label><br>
+            <input type="number" id="vehicle_id" name="vehicle_id" class="form-control" value="{{ booking['VehicleID'] }}" required><br><br>
+        </div>
+        <div class="mb-3">
+            <label for="booking_date" class="form-label">Booking Date:</label><br>
+            <input type="date" id="booking_date" name="booking_date" class="form-control" value="{{ booking['BookingDate'] }}" required><br><br>
+        </div>
+        <div class="mb-3">
+            <label for="customer_name" class="form-label">Customer Name:</label><br>
+            <input type="text" id="customer_name" name="customer_name" class="form-control" value="{{ booking['CustomerName'] }}" required><br><br>
+        </div>
+        <div class="mb-3">
+            <label for="contact_info" class="form-label">Contact Info:</label><br>
+            <input type="text" id="contact_info" name="contact_info" class="form-control" value="{{ booking['ContactInfo'] }}" required><br><br>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Booking</button>
+    </form>
+    <a href="/bookings" class="btn btn-secondary mt-3">Back to Bookings</a>
+{% endblock %}
