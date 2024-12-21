@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Booking</title>
+</head>
+<body>
+    <h1>Create New Booking</h1>
+    <form method="POST">
+        <label for="vehicle_id">Vehicle ID:</label><br>
+        <input type="number" id="vehicle_id" name="vehicle_id" required><br><br>
+
+        <label for="booking_date">Booking Date:</label><br>
+        <input type="date" id="booking_date" name="booking_date" required><br><br>
+
+        <label for="customer_name">Customer Name:</label><br>
+        <input type="text" id="customer_name" name="customer_name" required><br><br>
+
+        <label for="contact_info">Contact Info:</label><br>
+        <input type="text" id="contact_info" name="contact_info" required><br><br>
+
+        <input type="submit" value="Create Booking">
+    </form>
+    <a href="/bookings">Back to Bookings</a>
+</body>
+</html>
