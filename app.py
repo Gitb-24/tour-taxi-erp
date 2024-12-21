@@ -52,5 +52,19 @@ def create():
         return render_template('create_booking.html')
     return render_template('create_booking.html')
 
+@app.route('/delete/<int:id>', methods=('POST',))
+def delete(id):
+    conn = db.get_db_connection()
+    try:
+      conn.execute('DELETE FROM Bookings WHERE BookingID = ?', (id,))
+      conn.commit()
+      flash('"{}" was successfully deleted!'.format(id))
+    except sqlite3.Error as e:
+      flash(f'Error deleting record: {e}')
+    finally:
+      conn.close()
+    return redirect(url_for('bookings'))
+
+    
 if __name__ == "__main__":
     app.run(debug=True)
