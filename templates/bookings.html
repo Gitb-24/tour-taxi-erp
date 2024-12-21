@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings</title>
+</head>
+<body>
+    <h1>Bookings</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Vehicle ID</th>
+                <th>Booking Date</th>
+                <th>Customer Name</th>
+                <th>Contact Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking['BookingID'] }}</td>
+                <td>{{ booking['VehicleID'] }}</td>
+                <td>{{ booking['BookingDate'] }}</td>
+                <td>{{ booking['CustomerName'] }}</td>
+                <td>{{ booking['ContactInfo'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Back to Vehicles</a>
+</body>
+</html>
