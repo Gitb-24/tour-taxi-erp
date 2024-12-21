@@ -5,6 +5,17 @@
 </head>
 <body>
     <h1>Create New Booking</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
     <form method="POST">
         <label for="vehicle_id">Vehicle ID:</label><br>
         <input type="number" id="vehicle_id" name="vehicle_id" required><br><br>
