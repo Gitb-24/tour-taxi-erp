@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tour & Taxi ERP</title>
+</head>
+<body>
+    <h1>Vehicles</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Vehicle ID</th>
+                <th>Type</th>
+                <th>Model</th>
+                <th>Registration</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle['VehicleID'] }}</td>
+                <td>{{ vehicle['Type'] }}</td>
+                <td>{{ vehicle['Model'] }}</td>
+                <td>{{ vehicle['Registration'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
